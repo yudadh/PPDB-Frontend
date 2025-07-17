@@ -345,13 +345,6 @@ const onDownloadLaporan = async (form: SubmitEventForm) => {
                             </InputText>
                          </template> -->
                       </Column>
-                      <Column style="width: 20%">
-                         <template #body="{ data }">
-                            <div class="flex gap-2">
-                               
-                            </div>
-                         </template>
-                      </Column>
                       <template #footer>
                          <div class="flex justify-center">
                             {{ paginationValue() }} of {{ metaData.total }} data
