@@ -354,7 +354,7 @@ const severityStatusDokumenValid = (total: number) => {
                             class="grow" />
 
                         <!-- <Button label="" icon="pi pi-envelope" severity="info" @click="onVerify(data)"></Button> -->
-                        <OverlayBadge
+                        <!-- <OverlayBadge
                            severity="danger"
                            :value="data.keterangan ? '1' : '0'">
                            <Button
@@ -366,7 +366,7 @@ const severityStatusDokumenValid = (total: number) => {
                               icon="pi pi-envelope"
                               severity="warn"
                               @click="keteranganVisibility = true"></Button>
-                        </OverlayBadge>
+                        </OverlayBadge> -->
                      </div>
                      <!-- <Button
                         v-if="data.isAllDokumenValid"
