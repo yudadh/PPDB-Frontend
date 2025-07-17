@@ -240,7 +240,7 @@ const paginationValue = () => {
         <Toast />
         <div class="md:w-full">
             <div class="card">
-                <div class="flex flex-col gap-8">
+                <div class="flex flex-col gap-4">
                     <Button
                         label="Kembali"
                         severity="danger"
