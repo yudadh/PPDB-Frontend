@@ -323,6 +323,12 @@ async function onAddUserFormSubmit(form: SubmitEventForm) {
     }
 }
 
+function afterHideAddUser () {
+    addFormInitialValues.username = ''
+    addFormInitialValues.role_id = 0
+    addFormInitialValues.sekolah_id = 0
+}
+
 async function onEditFormSubmit(form: SubmitEventForm) {
     try {
         const response = await updateUser(
@@ -419,7 +425,7 @@ async function onEditFormSubmit(form: SubmitEventForm) {
                             </template>
                         </Column>
                     </DataTable>
-                    <Dialog v-model:visible="addNewUserVisibility" modal header="Tambah User" :style="{ width: '25rem' }">
+                    <Dialog v-model:visible="addNewUserVisibility" modal header="Tambah User" @after-hide="afterHideAddUser" :style="{ width: '25rem' }">
                         <Form v-slot="$form" :resolver="addResolver" :initialValues="addFormInitialValues" @submit="onAddUserFormSubmit" class="flex flex-col gap-4">
                             <div class="flex flex-col">
                                 <div class="flex flex-col gap-2 mb-4">
