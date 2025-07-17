@@ -1,6 +1,6 @@
 import axios, { type AxiosRequestConfig } from "axios";
 import { useAuthStore } from "@/store/authStore";
-import { env } from "@/config/envConfig";
+// import { env } from "@/config/envConfig";
 
 interface CustomAxiosRequestConfig extends AxiosRequestConfig {
     _retry?: boolean; // Properti opsional
@@ -9,16 +9,26 @@ interface CustomAxiosRequestConfig extends AxiosRequestConfig {
 type Service = 'auth' | 'siswa' | 'wilayah' | 'sekolah' | 'dokumen' | 'pendaftaran' | 'periode' | 'pengumuman'
 
 function createAPI(service: Service) {
+    // const services = {
+    //     auth: env.AUTH_SERVICE,
+    //     siswa: env.SISWA_SERVICE,
+    //     wilayah: env.WILAYAH_SERVICE,
+    //     sekolah: env.SEKOLAH_SERVICE,
+    //     dokumen: env.DOKUMEN_SERVICE,
+    //     pendaftaran: env.PENDAFTARAN_SERVICE,
+    //     periode: env.PERIODE_SERVICE,
+    //     pengumuman: env.PENGUMUMAN_SERVICE
+    // };
     const services = {
-        auth: env.AUTH_SERVICE,
-        siswa: env.SISWA_SERVICE,
-        wilayah: env.WILAYAH_SERVICE,
-        sekolah: env.SEKOLAH_SERVICE,
-        dokumen: env.DOKUMEN_SERVICE,
-        pendaftaran: env.PENDAFTARAN_SERVICE,
-        periode: env.PERIODE_SERVICE,
-        pengumuman: env.PENGUMUMAN_SERVICE
-    };
+      auth: "https://auth-service-371797359815.asia-southeast2.run.app",
+      siswa: "https://siswa-service-371797359815.asia-southeast2.run.app",
+      wilayah: "https://wilayah-service-371797359815.asia-southeast2.run.app",
+      sekolah: "https://sekolah-service-371797359815.asia-southeast2.run.app",
+      dokumen: "https://dokumen-service-371797359815.asia-southeast2.run.app",
+      pendaftaran: "https://pendaftaran-service-371797359815.asia-southeast2.run.app",
+      periode: "https://periode-service-371797359815.asia-southeast2.run.app",
+      pengumuman: "https://pengumuman-service-371797359815.asia-southeast2.run.app"  
+    }
 
     if (!services[service]) {
         throw new Error(`Service ${service} is not defined`);

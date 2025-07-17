@@ -13,5 +13,6 @@ export const env = {
    PENGUMUMAN_SERVICE: process.env.PENGUMUMAN_SERVICE || 'http://localhost:3009',
    SEKOLAH_SERVICE: process.env.SEKOLAH_SERVICE || 'http://localhost:3005',
    SISWA_SERVICE: process.env.SISWA_SERVICE || 'http://localhost:3006',
-   WILAYAH_SERVICE: process.env.WILAYAH_SERVICE || 'http://localhost:3008',
+   WILAYAH_SERVICE: process.env.WILAYAH_SERVICE || 'http://localhost:3008'
 };
+
