@@ -10,7 +10,7 @@ import type { SiswaDTO, SiswaForm  } from "@/interfaces/siswaInterface";
 import { useRouter } from 'vue-router';
 import { getAllProvinsi, getBanjarByDesaId, getDesaByKecamatanId, getKabupatenByProvinsiId, getKecamatanByKabupatenId } from '@/services/wilayahService';
 import type { GetProvinsi, GetKabupaten, GetKecamatan, GetDesa, GetBanjar } from "@/interfaces/wilayahInterface";
-import { getAllAgama, getAllPekerjaan, getAllPenghasilan } from '@/services/sekolahService';
+import { getAllAgama, getAllPekerjaan, getAllPenghasilan } from '@/services/siswaService';
 import type { GetAgama, GetPekerjaan, GetPenghasilan } from '@/interfaces/sekolahInterface';
 import L from 'leaflet'
 import { useAuthStore } from '@/store/authStore';
