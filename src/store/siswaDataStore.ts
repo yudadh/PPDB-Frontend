@@ -31,6 +31,6 @@ export const useSiswaDataStore = defineStore("siswaData", {
         }
     },
     persist: {
-        storage: localStorage
+        storage: sessionStorage
     }
 })
