@@ -17,7 +17,6 @@ import { debounce } from "lodash";
 import { daftarZonasi, daftarZonasiBulk } from "@/services/pendaftaranService";
 import type { PendaftaranZonasi, PendaftaranZonasiBulk } from "@/interfaces/pendaftaranInterface";
 import PendaftaranTable from "@/components/table/PendaftaranTable.vue";
-import { verifikasiZonasi } from "@/services/verifikasiService";
 import { usePendaftaranStore } from "@/store/pendaftaranStore";
 import { findJadwal, findPeriodeJalur } from "@/utils/findPeriodeJalur";
 import { getJadwalByPeriodeJalurId } from "@/services/periodeService";
@@ -254,22 +253,22 @@ const onRegisterSiswa = (data: SiswaWithStatus) => {
          label: "Daftar",
       },
       accept: async () => {
-         if (data.pendaftaran_id && data.statusDaftar === 'DIBATALKAN') {
-            const response = await verifikasiZonasi([data.pendaftaran_id], 'VERIF_SD')
-            if (response) {
-               toast.add({
-                  severity: "success",
-                  summary: "Sukses",
-                  detail: `Berhasil mendaftarkan siswa pada jalur Zonasi`,
-                  life: 2000,
-               });
-               const newSiswaData = siswaData.value
-               .filter((siswa) => siswa.siswa_id !== data.siswa_id)
-               siswaData.value = newSiswaData
-            }
-         } else {
-            await registerSiswa(data);
-         }
+         await registerSiswa(data);
+         // if (data.pendaftaran_id && data.statusDaftar === 'DIBATALKAN') {
+         //    const response = await verifikasiZonasi([data.pendaftaran_id], 'VERIF_SD')
+         //    if (response) {
+         //       toast.add({
+         //          severity: "success",
+         //          summary: "Sukses",
+         //          detail: `Berhasil mendaftarkan siswa pada jalur Zonasi`,
+         //          life: 2000,
+         //       });
+         //       const newSiswaData = siswaData.value
+         //       .filter((siswa) => siswa.siswa_id !== data.siswa_id)
+         //       siswaData.value = newSiswaData
+         //    }
+         // } else {
+         // }
          // toast.add({ severity: 'info', summary: 'Confirmed', detail: 'You have accepted', life: 3000 });
       },
       reject: () => {
